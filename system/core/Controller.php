@@ -102,9 +102,11 @@ class CI_Controller {
 
 	public function check_login_admin()
 	{
-	    if(empty($this->session->userdata('LoginYN')) OR $this->session->userdata('LoginLevel')!="Admin"){
+		$loginYN = $this->session->userdata('LoginYN');
+		$loginLevel = $this->session->userdata('LoginLevel')!="Admin";
+		if(empty($loginYN) OR $loginLevel){
 			redirect('auth/login');
-	    }
+		}
 	}
 
 }

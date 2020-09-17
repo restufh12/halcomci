@@ -1206,6 +1206,68 @@ jQuery($=> {
             }
         },
     });
+	
+	/*Gallery without spaces*/
+    $("#grid-mosaic1").cubeportfolio({
+        filters: "#mosaic-filter1",
+        layoutMode: 'grid',
+        defaultFilter: ".network",
+        animationType: "rotateSides",
+        gapHorizontal: 0,
+        gapVertical: 0,
+        gridAdjustment: 'responsive',
+        mediaQueries: [{
+            width: 1500,
+            cols: 3,
+        }, {
+            width: 1100,
+            cols: 3,
+        }, {
+            width: 767,
+            cols: 2,
+        }, {
+            width: 480,
+            cols: 1,
+        }],
+        plugins: {
+            loadMore: {
+                element: '#js-loadMore-mosaic',
+                action: 'click',
+                loadItems: 3,
+            }
+        },
+    });
+	
+	/*Gallery without spaces*/
+    $("#grid-mosaic2").cubeportfolio({
+        filters: "#mosaic-filter2",
+        layoutMode: 'grid',
+        defaultFilter: ".manufacturing",
+        animationType: "rotateSides",
+        gapHorizontal: 0,
+        gapVertical: 0,
+        gridAdjustment: 'responsive',
+        mediaQueries: [{
+            width: 1500,
+            cols: 3,
+        }, {
+            width: 1100,
+            cols: 3,
+        }, {
+            width: 767,
+            cols: 2,
+        }, {
+            width: 480,
+            cols: 1,
+        }],
+        plugins: {
+            loadMore: {
+                element: '#js-loadMore-mosaic',
+                action: 'click',
+                loadItems: 3,
+            }
+        },
+    });
 
 
     /* =====================================

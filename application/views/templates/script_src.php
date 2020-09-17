@@ -52,6 +52,8 @@
 <script src="<?= base_url()?>node_modules/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
 <!-- Jquery Confirm -->
 <script src="<?= base_url()?>vendor/jquery-confirm/jquery-confirm.min.js"></script>
+<!-- TinyMCE -->
+<script src="<?= base_url()?>node_modules/tinymce/tinymce.min.js"></script>
 
 <script type="text/javascript">
 	class Contact {
@@ -193,10 +195,6 @@
 
 	contact = new Contact();
 
-	function fnUpdateEvent(){
-		alert("bb")
-	}
-
 	function fnDeleteEvent(RunNo){
 		$.confirm({
 	    title: 'Delete Event',
@@ -241,7 +239,54 @@
 	            }
 	        }
 	    }
-	});
+		});
+	}
+
+	function fnDeleteSolution(RunNo){
+		$.confirm({
+	    title: 'Delete Solution',
+	    content: 'Are you sure want to delete solution?',
+	    type: 'red',
+	    typeAnimated: true,
+	    buttons: {
+	        tryAgain: {
+	            text: 'Delete',
+	            btnClass: 'btn-red',
+	            action: function(){
+	            	$.ajax({
+						url  : "<?= base_url().'solution/delete_solution'?>",
+						type : "POST",
+						data : {RunNo : RunNo},
+						success : function(data){
+							if(data=="1"){
+								Swal.fire({
+			                        icon: 'success',
+			                        title: 'Successfully!',
+			                        text: 'Delete Solution Successfully!',
+			                    }).then((result) => {
+								  if (result.value) {
+								    window.location.replace("<?= base_url().'solution'?>");
+								  }
+								});
+							} else {
+							  	Swal.fire({
+			                        icon: 'error',
+			                        title: 'Oops...',
+			                        text: 'Delete Solution Failure.',
+			                        timer: 5000
+			                    });
+							}
+						}
+					});
+	            }
+	        },
+	        close: {
+	            text: 'Cancel',
+	            action: function(){
+	            }
+	        }
+	    }
+		});
 	}
 
 	// Upload Image
@@ -298,5 +343,91 @@
 	  	});
 	}
 	// ALERT UPDATE EVENT -------------------------------------------------------------------------------
+
+
+	// ALERT NEW SOLUTION -------------------------------------------------------------------------------
+	let msgnewsolution = "<?= $this->session->flashdata('msgnewsolution')?>";
+	if(msgnewsolution=="1"){
+	  	$.toast({
+			heading: 'Success',
+			text: 'Create Solution Successfully',
+			showHideTransition: 'slide',
+			icon: 'success',
+			position: 'bottom-right',
+			hideAfter: 7000
+	  	});
+	} else if(msgnewsolution=="0"){
+		$.toast({
+			heading: 'Error',
+			text: "Create Solution Failed",
+			showHideTransition: 'slide',
+			icon: 'error',
+			position: 'top-right',
+			hideAfter: 3000
+		});
+	}
+	// --------------------------------------------------------------------------------------------------
+
+	// ALERT UPDATE SOLUTION -------------------------------------------------------------------------------
+	let msgupdatesolution = "<?= $this->session->flashdata('msgupdatesolution')?>";
+	if(msgupdatesolution=="1"){
+	  $.toast({
+	      heading: 'Success',
+	      text: 'Update Solution Successfully',
+	      showHideTransition: 'slide',
+	      icon: 'success',
+	      position: 'bottom-right',
+	      hideAfter: 7000
+	  });
+	} else if(msgupdatesolution=="0"){
+		$.toast({
+	      heading: 'Error',
+	      text: "Update Solution Failed",
+	      showHideTransition: 'slide',
+	      icon: 'error',
+	      position: 'top-right',
+	      hideAfter: 3000
+	  	});
+	}
+	// ALERT UPDATE SOLUTION -------------------------------------------------------------------------------
 	
+
+	// TinyMCE
+	tinymce.init({
+		height: 500,
+		selector: '#EventDescription',
+		relative_urls : false,
+		remove_script_host : false,
+		plugins: [
+		     "advlist autolink link image lists charmap print preview hr anchor pagebreak",
+		     "searchreplace wordcount visualblocks visualchars insertdatetime media nonbreaking",
+		     "table contextmenu directionality emoticons paste textcolor responsivefilemanager code"
+		],
+		toolbar1: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | styleselect",
+		toolbar2: "| responsivefilemanager | link unlink anchor | image media | forecolor backcolor  | print preview code ",
+		image_advtab: true ,
+
+		external_filemanager_path:"<?= base_url()?>assets/filemanager/",
+		filemanager_title:"File Manager" ,
+		external_plugins: { "filemanager" : "<?= base_url()?>node_modules/tinymce/plugins/responsivefilemanager/plugin.min.js"}
+	});
+	tinymce.init({
+		height: 500,
+		selector: '#SolutionDescription',
+		relative_urls : false,
+		remove_script_host : false,
+		plugins: [
+		     "advlist autolink link image lists charmap print preview hr anchor pagebreak",
+		     "searchreplace wordcount visualblocks visualchars insertdatetime media nonbreaking",
+		     "table contextmenu directionality emoticons paste textcolor responsivefilemanager code"
+		],
+		toolbar1: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | styleselect",
+		toolbar2: "| responsivefilemanager | link unlink anchor | image media | forecolor backcolor  | print preview code ",
+		image_advtab: true ,
+
+		external_filemanager_path:"<?= base_url()?>assets/filemanager/",
+		filemanager_title:"File Manager" ,
+		external_plugins: { "filemanager" : "<?= base_url()?>node_modules/tinymce/plugins/responsivefilemanager/plugin.min.js"}
+	});
+
 </script>

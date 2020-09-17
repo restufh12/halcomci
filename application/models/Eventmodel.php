@@ -54,8 +54,22 @@ class Eventmodel extends CI_Model{
   	public function homeevent(){
 		$this->db->select('*');
 		$this->db->from('events');
-		$this->db->order_by('RunNo', 'DESC');
+		$this->db->order_by('D_ate', 'DESC');
 		$this->db->limit(2);
+		$result = $this->db->get();
+
+	    if($result->num_rows() > 0){
+	        return $result->result_array();
+	    } else {
+	        return array();
+	    }
+	}
+	
+	public function recentpost(){
+		$this->db->select('*');
+		$this->db->from('events');
+		$this->db->order_by('D_ate', 'DESC');
+		$this->db->limit(4);
 		$result = $this->db->get();
 
 	    if($result->num_rows() > 0){

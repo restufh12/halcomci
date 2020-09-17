@@ -35,7 +35,7 @@
                     <span class="divider-center"></span>
                 </h2>
                 <div class="col-md-8 offset-md-2 heading_space">
-                    <p>Enter your username and password to proceed to the administrator page, or click sign up now to create an account!</p>
+                    <p>Enter your username and password to proceed to the administrator page, <br>or click sign up now to create an account!</p>
                 </div>
             </div>
             <div class="col-lg-6 pr-lg-0 col-md-12 d-none d-lg-flex">
@@ -81,8 +81,8 @@
                             </div>
                             <div class="col-sm-12">
                                 <button type="submit" class="button gradient-btn">Login</button>
-                                <a href="<?php echo site_url('auth/forget_password') ?>" class="ml-2 defaultcolor">Forget password?</a>
-                                <p class="top30 mb-0"> Don't have an account? &nbsp;<a href="<?php echo site_url('auth/register') ?>" class="defaultcolor">Sign Up Now</a> </p>
+                                <a href="javascript:void(0)" class="ml-2 defaultcolor">Forget password?</a>
+                                <p class="top30 mb-0"> Don't have an account? &nbsp;<a href="javascript:void(0)" class="defaultcolor">Sign Up Now</a> </p>
                             </div>
                         </div>
                     </form>

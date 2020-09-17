@@ -7,12 +7,13 @@ class Event extends CI_Controller {
         parent::__construct();
         $this->load->library('pagination');
         $this->load->model('eventmodel');
-    }
+	}
 
     public function detail_event($RunNo){
         $eventdetail = $this->eventmodel->get_detail($RunNo);
         $data = array('container'   => 'event-detail',
                       'eventdetail' => $eventdetail);
+		$data['recentpost'] = $this->eventmodel->recentpost();
         $this->load->view('templates/templates', $data);
     }
 
@@ -21,7 +22,8 @@ class Event extends CI_Controller {
         //konfigurasi pagination
         $config['base_url'] = site_url('event/index'); //site url
         $config['total_rows'] = $this->db->count_all('events'); //total row
-        $config['per_page'] = 3;  //show record per halaman
+		$config['short_rows'] = $this->db->order_by('RunNo', 'DESC');
+        $config['per_page'] = 2;  //show record per halaman
         $config["uri_segment"] = 3;  // uri parameter
         $choice = $config["total_rows"] / $config["per_page"];
         $config["num_links"] = floor($choice);
@@ -55,6 +57,7 @@ class Event extends CI_Controller {
         $data['pagination'] = $this->pagination->create_links();
 
 		$data['container'] = 'event';
+		$data['recentpost'] = $this->eventmodel->recentpost();
 		$this->load->view('templates/templates', $data);
 	}
 

@@ -2225,7 +2225,7 @@ a.dropdown-toggle::after {
 }
 
 .transparent-bg .sidemenu_btn>span {
-    background: #fff;
+    background: #24cdd5;
 }
 
 .fixedmenu .sidemenu_btn>span:not(.gradient-bg) {
@@ -5884,6 +5884,7 @@ form.findus .select:after {
 
 .single_post .post>img {
     width: 100%;
+	margin-top: 30px;
 }
 
 .single_post .text {

@@ -2,9 +2,9 @@
 <header class="site-header" id="header">
     <nav class="navbar navbar-expand-lg transparent-bg static-nav">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="<?php echo base_url() ?>assets/images/logo-transparent.png" alt="logo" class="logo-default">
-                <img src="<?php echo base_url() ?>assets/images/logo.png" alt="logo" class="logo-scrolled">
+            <a class="" href="index.html">
+                <img src="<?php echo base_url() ?>assets/images/logo-transparent.png" width="150px" alt="logo" class="logo-default">
+                <img src="<?php echo base_url() ?>assets/images/logo.png" alt="logo" width="150px" class="logo-scrolled">
             </a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
@@ -42,6 +42,7 @@
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> My Account </a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="<?php echo site_url('event/create_event') ?>">Create Event</a>
+                            <a class="dropdown-item" href="<?php echo site_url('solution/create_solution') ?>">Create Solution</a>
                             <a class="dropdown-item" href="<?php echo site_url('auth/logout') ?>">Logout</a>
                         </div>
                     </li>
@@ -54,11 +55,11 @@
                         </div>
                     </li>
                     <?php else: ?>
-                    <li class="nav-item dropdown position-relative">
+                    <li class="nav-item dropdown position-relative" style="display: none;">
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Account </a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="<?php echo site_url('auth/login') ?>">Login</a>
-                            <a class="dropdown-item" href="<?php echo site_url('auth/register') ?>">Register</a>
+                            <a class="dropdown-item" href="javascript:void(0)">Register</a>
                         </div>
                     </li>
                     <?php endif; ?>
@@ -126,6 +127,9 @@
                                     <a class="nav-link" href="<?php echo site_url('event/create_event') ?>">Create Event</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo site_url('solution/create_solution') ?>">Create Solution</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('auth/logout') ?>">Logout</a>
                                 </li>
                             </ul>
@@ -148,7 +152,7 @@
                         </div>
                     </li>
                     <?php else: ?>
-                    <li class="nav-item">
+                    <li class="nav-item" style="display: none;">
                         <a class="nav-link collapsePagesSideMenu" data-toggle="collapse" href="#sideNavPages2">
                             Account <i class="fas fa-chevron-down"></i>
                         </a>
@@ -158,7 +162,7 @@
                                     <a class="nav-link" href="<?php echo site_url('auth/login') ?>">Login</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('register') ?>">Register</a>
+                                    <a class="nav-link" href="javascript:void(0)">Register</a>
                                 </li>
                             </ul>
                         </div>
@@ -168,10 +172,9 @@
             </nav>
             <div class="side-footer w-100">
                 <ul class="social-icons-simple white top40">
-                    <li><a href="javascript:void(0)"><i class="fab fa-facebook-f"></i> </a> </li>
-                    <li><a href="javascript:void(0)"><i class="fab fa-twitter"></i> </a> </li>
-                    <li><a href="javascript:void(0)"><i class="fab fa-instagram"></i> </a> </li>
-					<li><a href="javascript:void(0)"><i class="fab fa-linkedin"></i> </a> </li>
+                    <li><a href="https://www.facebook.com/pages/category/Computer-Company/PTHalcom-Integrated-Solutions-216912491719380/" target="_blank"><i class="fab fa-facebook-f"></i> </a> </li>
+                        <li><a href="https://id.linkedin.com/company/pt-halcom-integrated-solution" target="_blank"><i class="fab fa-linkedin-in"></i> </a> </li>
+                        <li><a href="https://www.instagram.com/halcom.official/?hl=en" target="_blank"><i class="fab fa-instagram"></i> </a> </li>
                 </ul>
                 <p class="whitecolor">&copy;  Halcom Integrated Solution</p>
             </div>

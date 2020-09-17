@@ -5,10 +5,8 @@
         <div class="row">
             <div class="col-lg-8 offset-lg-2">
                 <div class="page-titles whitecolor text-center padding_top padding_bottom">
-                    <h2 class="font-xlight">We Love </h2>
-                    <h2 class="font-bold">Walking line In Usable</h2>
-                    <h2 class="font-xlight">Products</h2>
-                    <h3 class="font-light pt-2">The Best Multipurpose Template in Market</h3>
+                    <h2 class="font-xlight">Exclusive Events</h2>
+                    <h2 class="font-bold">Priceless Experiences</h2>
                 </div>
             </div>
         </div>
@@ -32,7 +30,27 @@
     <div class="container">
         <div class="row whitebox top15">
             <div class="col-lg-4 col-md-5">
-                <div class="widget heading_space text-center text-md-left">
+                <div class="widget heading_space wow fadeIn" data-wow-delay="350ms">
+					<h4 class="text-capitalize darkcolor bottom20 text-center text-md-left">Recent Post</h4>
+					<?php foreach ($recentpost as $val) :?>
+					<div class="single_post">
+						<?php  
+						if($val['Attachment'] == "" OR $val['Attachment']== "default.png"){
+							$vUrlImage = "assets/images/blogfull1.jpg";
+						} else {
+							$vUrlImage = "assets/upload/event/".$val['Attachment'];
+						}
+						?>
+						<a href="<?php echo site_url('event/detail_event/'.$val['RunNo']) ?>" class="post"><img src="<?php echo base_url().$vUrlImage ?>" width="30px" height="50px" alt="post image"></a>
+						<div class="text">
+							<a href="<?php echo site_url('event/detail_event/'.$val['RunNo']) ?>"><?php echo $val['Title']; ?></a>
+							<span><?php echo date('d/m/Y', strtotime($val['D_ate'])); ?></span>
+						</div>
+					</div>
+					<?php endforeach; ?>
+				</div>
+				
+				<div class="widget heading_space text-center text-md-left">
                     <h4 class="text-capitalize darkcolor bottom20">Need Help?</h4>
                     <div class="contact-table colorone d-table bottom15">
                         <div class="d-table-cell cells">
@@ -61,6 +79,7 @@
                         </div>
                     </div>
 				</div>
+				
             </div>
             <div class="col-lg-8 col-md-7">
                 <div class="widget heading_space text-center text-md-left">
@@ -77,7 +96,8 @@
 					</div>
 					<h3 class="darkcolor font-light bottom10 top30"><?php echo $eventdetail->Title; ?></h3>
                     <ul class="commment">
-                        <li><i class="fas fa-calendar"></i> <?php echo date('d/m/Y', strtotime($eventdetail->D_ate)); ?></li>
+                        <li><i class="fa fa-calendar"></i> <?php echo date('d/m/Y', strtotime($eventdetail->D_ate)); ?></li>
+						<li><i class="fa fa-user"></i> Admin</li>
                     </ul>
 					<br>
 					<p class="bottom30"><?php echo $eventdetail->Description; ?></p>

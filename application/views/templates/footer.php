@@ -15,19 +15,19 @@
                             <div class="col-md-3 col-sm-6">
                                 <div class="form-group">
                                     <label for="userName" class="d-none"></label>
-                                    <input class="form-control" type="text" placeholder="First Name:" required id="userName" name="userName">
+                                    <input class="form-control" type="text" placeholder="Name" required id="userName" name="userName">
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-6">
                                 <div class="form-group">
                                     <label for="companyName" class="d-none"></label>
-                                    <input class="form-control" type="tel" placeholder="Company Name"  id="companyName" name="companyName">
+                                    <input class="form-control" type="tel" placeholder="Company"  id="companyName" name="companyName">
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-6">
                                 <div class="form-group">
                                     <label for="email" class="d-none"></label>
-                                    <input class="form-control" type="email" placeholder="Email:" required id="email" name="email">
+                                    <input class="form-control" type="email" placeholder="Email" required id="email" name="email">
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-6">
@@ -47,13 +47,12 @@
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="footer_panel padding_bottom_half bottom20">
-                    <a href="index.html" class="footer_logo bottom25"><img src="<?php echo base_url() ?>assets/images/logo-transparent.png" alt="trax"></a>
+                    <a href="index.html" class=" bottom25"><img src="<?php echo base_url() ?>assets/images/logo-transparent.png" width="150px" alt=""></a>
                     <p class="whitecolor bottom25">Halcom are IT Infrastructure Specialist, and determined to be the IT company that provides total solutions to its clients and include convenience in implementing the solutions we provide.</p>
                     <ul class="social-icons white wow fadeInUp" data-wow-delay="300ms">
-                        <li><a href="javascript:void(0)"><i class="fab fa-facebook-f"></i> </a> </li>
-                        <li><a href="javascript:void(0)"><i class="fab fa-twitter"></i> </a> </li>
-                        <li><a href="javascript:void(0)"><i class="fab fa-linkedin-in"></i> </a> </li>
-                        <li><a href="javascript:void(0)"><i class="fab fa-instagram"></i> </a> </li>
+                        <li><a href="https://www.facebook.com/pages/category/Computer-Company/PTHalcom-Integrated-Solutions-216912491719380/" target="_blank"><i class="fab fa-facebook-f"></i> </a> </li>
+                        <li><a href="https://id.linkedin.com/company/pt-halcom-integrated-solution" target="_blank"><i class="fab fa-linkedin-in"></i> </a> </li>
+                        <li><a href="https://www.instagram.com/halcom.official/?hl=en" target="_blank"><i class="fab fa-instagram"></i> </a> </li>
                     </ul>
                 </div>
             </div>
@@ -71,9 +70,9 @@
                 <div class="footer_panel padding_bottom_half bottom20">
                     <h3 class="whitecolor bottom25">Our Services</h3>
                     <ul class="links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Solutions</a></li>
+                        <li><a href="<?php echo base_url('about') ?>">About Us</a></li>
+                        <li><a href="javascript:void(0)">FAQs</a></li>
+                        <li><a href="<?php echo base_url('solution') ?>">Solutions</a></li>
                         <li><a href="javascript:void(0)">Privacy Policy</a></li>
                     </ul>
                 </div>
@@ -82,7 +81,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="footer_panel padding_bottom_half bottom20">
                     <h3 class="whitecolor bottom25">Ready to Connect</h3>
-                    <p class="whitecolor bottom25"><img src="assets/images/QR.jpg" width="100px"/></p>
+                    <p class="whitecolor bottom25"><img src="<?php echo base_url() ?>assets/images/QR.jpg" width="100px"/></p>
                 </div>
             </div>
         </div>

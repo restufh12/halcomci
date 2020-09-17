@@ -45,9 +45,10 @@
                         <div class="image" style="height: 325px;"><img src="<?php echo base_url().$vUrlImage ?>" alt="blog" class="border_radius"></div>
                         <h3 class="darkcolor font-light bottom10 top30"> <a href="<?php echo site_url('event/detail_event/'.$row->RunNo) ?>"><?php echo $row->Title; ?></a></h3>
                         <ul class="commment">
-                            <li><i class="fas fa-calendar"></i> <?php echo date('d/m/Y', strtotime($row->D_ate)); ?></li>
+                            <li><i class="fa fa-calendar"></i> <?php echo date('d/m/Y', strtotime($row->D_ate)); ?></li>
+							<li><i class="fa fa-user"></i> Admin</li>
                         </ul>
-                        <p class="top15"><?= strlen($row->Description) > 130 ? substr($row->Description,0,130)."..." : $row->Description;?></p>
+                        <p class="top15"><?= strlen(strip_tags($row->Description)) > 130 ? substr(strip_tags($row->Description),0,130)."..." : strip_tags($row->Description);?></p>
                         <a class=" button btn-primary" href="<?php echo site_url('event/detail_event/'.$row->RunNo) ?>">Read More</a>
 
                         <?php if($this->session->userdata('LoginYN')=="1" AND $this->session->userdata('LoginLevel')=="Admin"): ?>
@@ -65,21 +66,59 @@
 
             <div class="col-lg-4">
                 <aside class="sidebar padding-bottom">
-                    <div class="widget heading_space wow fadeIn text-center text-md-left" data-wow-delay="400ms">
-                        <h4 class="text-capitalize darkcolor bottom20">Top Tags</h4>
-                        <ul class="webtags">
-                            <li><a href="#.">Books</a></li>
-                            <li><a href="#.">Midterm test </a></li>
-                            <li><a href="#.">Presentation</a></li>
-                            <li><a href="#.">Courses</a></li>
-                            <li><a href="#.">Certifications</a></li>
-                            <li><a href="#.">Teachers</a></li>
-                            <li><a href="#.">Student Life</a></li>
-                            <li><a href="#.">Study</a></li>
-                            <li><a href="#.">Midterm test </a></li>
-                            <li><a href="#.">Presentation</a></li>
-                            <li><a href="#.">Courses</a></li>
-                        </ul>
+                    <div class="widget heading_space wow fadeIn" data-wow-delay="350ms">
+                        <h4 class="text-capitalize darkcolor bottom20 text-center text-md-left">Recent Post</h4>
+                        <?php foreach ($recentpost as $val) :?>
+						<div class="single_post">
+							<?php  
+							if($val['Attachment'] == "" OR $val['Attachment']== "default.png"){
+								$vUrlImage = "assets/images/blogfull1.jpg";
+							} else {
+								$vUrlImage = "assets/upload/event/".$val['Attachment'];
+							}
+							?>
+                            <a href="<?php echo site_url('event/detail_event/'.$val['RunNo']) ?>" class="post"><img src="<?php echo base_url().$vUrlImage ?>" width="30px" height="50px" alt="post image"></a>
+                            <div class="text">
+                                <a href="<?php echo site_url('event/detail_event/'.$val['RunNo']) ?>"><?php echo $val['Title']; ?></a>
+                                <span><?php echo date('d/m/Y', strtotime($val['D_ate'])); ?></span>
+                            </div>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+					
+					<div class="widget heading_space wow fadeIn" data-wow-delay="350ms">
+                        <h4 class="text-capitalize darkcolor bottom20">Need Help?</h4>
+						<div class="contact-table colorone d-table bottom15">
+							<div class="d-table-cell cells">
+								<span class="icon-cell"><i class="fas fa-mobile-alt"></i></span>
+							</div>
+							<div class="d-table-cell cells">
+								<p class="bottom0">+62 778-461503</p>
+							</div>
+						</div>
+						<div class="contact-table colorone d-table bottom15 text-left">
+							<div class="d-table-cell cells">
+								<span class="icon-cell"><i class="fas fa-map-marker-alt"></i></span>
+							</div>
+							<div class="d-table-cell cells">
+								<p class="bottom0">The Central Business Sukajadi Blok B2 No 3A Batam Kepulauan Riau 29444, 
+									<span class="d-block">Indonesia</span>
+								</p>
+							</div>
+						</div>
+						<div class="contact-table colorone d-table text-left">
+							<div class="d-table-cell cells">
+								<span class="icon-cell"><i class="far fa-clock"></i></span>
+							</div>
+							<div class="d-table-cell cells">
+								<p class="bottom0">Mon-Fri: 9am-5pm</p>
+							</div>
+						</div>
+                    </div>
+					
+					<div class="widget heading_space wow fadeIn" data-wow-delay="350ms">
+						<h4 class="text-capitalize darkcolor bottom20">Map</h4>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.0828513388533!2d104.03161631427511!3d1.1001449991975258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d98ecb036804c3%3A0x3ce8c64d1c18113c!2sPT.%20Halcom%20Integrated%20Solution%20-%20IT%20Infrastructure%20Specialist!5e0!3m2!1sid!2sid!4v1599449550895!5m2!1sid!2sid" width="100%" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>
                 </aside>
             </div>

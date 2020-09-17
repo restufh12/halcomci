@@ -33,10 +33,7 @@
                 </h2>
             </div>
             <div class="col-lg-12">
-                <div id="mosaic-filter" class="cbp-l-filters bottom30 wow fadeIn text-center" data-wow-delay="350ms">
-                    <div data-filter="*" class="cbp-filter-item">
-                        <span>All</span>
-                    </div>
+                <div id="mosaic-filter2" class="cbp-l-filters bottom30 wow fadeIn text-center" data-wow-delay="350ms">
                     <div data-filter=".manufacturing" class="cbp-filter-item">
                         <span>Manufacturing</span>
                     </div>
@@ -58,7 +55,7 @@
 				</div>
             </div>
             <div class="col-lg-12">
-                <div id="grid-mosaic" class="cbp cbp-l-grid-mosaic-flat">
+                <div id="grid-mosaic2" class="cbp cbp-l-grid-mosaic-flat">
                     <!--Item 1-->
                     <div class="cbp-item brand manufacturing">
                         <img src="<?php echo base_url() ?>assets/images/client-1.png" alt="">
@@ -249,16 +246,7 @@
                         </div>
                     </div>
                 </div>
-				<div class="col-lg-12">
-                    <!--Load more itema from another html file using ajax-->
-                    <div id="js-loadMore-mosaic" class="cbp-l-loadMore-button ">
-                        <a href="load-more.html" class="cbp-l-loadMore-link button py-1 button gradient-btn whitecolor transition-3" rel="nofollow">
-                            <span class="cbp-l-loadMore-defaultText">LOAD MORE (<span class="cbp-l-loadMore-loadItems">13</span>)</span>
-                            <span class="cbp-l-loadMore-loadingText">LOADING <i class="fas fa-spinner fa-spin"></i></span>
-                            <span class="cbp-l-loadMore-noMoreLoading d-none">NO MORE WORKS</span>
-                        </a>
-                    </div>
-                </div>
+				
             </div>
         </div>
     </div>

@@ -3,6 +3,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Halcom Integrated Solution</title>
+    <meta content="Halcom are IT Infrastructure Specialist, and determined to be the IT company that provides total solutions to its clients and include convenience in implementing the solutions we provide." name="descriptison">
     <link href="<?php echo base_url() ?>assets/images/fav.png" rel="icon">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/all.min.css">

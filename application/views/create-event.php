@@ -34,11 +34,11 @@ $vRequireImg  = ($vRunNoEvent==""?'required':'');
 <!-- Main sign-up section starts -->
 <section id="ourfaq" class="bglight position-relative padding">
     <div class="container">
+        <?php echo form_open_multipart($vUrlPost);?>
         <div class="row">
-            <div class="col-lg-7 col-md-12 col-sm-12 pr-lg-0 whitebox">
+            <div class="col-lg-6 col-md-12 col-sm-12 pr-lg-0 whitebox">
                 <div class="widget logincontainer">
                     <h3 class="darkcolor bottom35 text-center text-md-left"><?= $vActionType?> Your Event </h3>
-                        <?php echo form_open_multipart($vUrlPost);?>
 
                         <input type="hidden" name="RunNo" value="<?= $vRunNoEvent?>">
                         <div class="row">
@@ -78,25 +78,31 @@ $vRequireImg  = ($vRunNoEvent==""?'required':'');
                                     <input class="form-control" type="text" required name="EventTitle" id="EventTitle" value="<?= @$dataEvent->Title?>">
                                 </div>
                             </div>
-                            <div class="col-md-12 col-sm-12">
-                                <div class="form-group bottom35">
-                                    <label for="registerPassConfirm">Description:</label>
-                                    <textarea class="form-control" required name="EventDescription" id="EventDescription"><?= @$dataEvent->Description?></textarea>
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <button type="submit" class="button gradient-btn w-100"><?= $vSaveCaption?></button>
-                            </div>
                         </div>
-                        <?php echo form_close(); ?>
                 </div>
             </div>
-            <div class="col-lg-5 d-none d-lg-block pl-lg-0">
-                <div class=" image login-image h-100">
+            <div class="col-lg-6 d-none d-lg-block pl-lg-0">
+                <div class=" image login-image" style="height: 98.38% !important;">
                     <img src="<?php echo base_url() ?>assets/images/register-section.jpg" alt="" class="h-100">
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 pr-lg-0 whitebox">
+                <div class="widget logincontainer">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="form-group bottom35">
+                            <label for="registerPassConfirm">Description:</label>
+                            <textarea class="form-control" name="EventDescription" id="EventDescription"><?= @$dataEvent->Description?></textarea>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <button type="submit" class="button gradient-btn w-100"><?= $vSaveCaption?></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php echo form_close(); ?>
     </div>
 </section>
 <!-- Main sign-up section ends 

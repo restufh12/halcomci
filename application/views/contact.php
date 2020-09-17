@@ -32,7 +32,7 @@
                     <div class="contact-meta px-2 text-center text-md-left">
                         <div class="heading-title">
                             <span class="defaultcolor mb-3">Halcom Integrated Solution</span>
-                            <h2 class="darkcolor font-normal mb-4"><span class="d-none d-md-inline-block">Our</span> Agency Office <span class="d-none d-md-inline-block">In Batam</span></h2>
+                            <h2 class="darkcolor font-normal mb-4"><span class="d-none d-md-inline-block">Our</span> Office <span class="d-none d-md-inline-block">In Batam</span></h2>
                         </div>
                         <p class="bottom10">The Central Business Sukajadi Blok B2 No 3A<br>
 Batam - Kepulauan Riau 29444, Indonesia</p>
@@ -40,10 +40,9 @@ Batam - Kepulauan Riau 29444, Indonesia</p>
                         <p class="bottom10"><a href="mailto:sales@pt-halcom.com">sales@pt-halcom.com</a></p>
                         <p class="bottom10">Mon-Fri: 9am-5pm</p>
                         <ul class="social-icons mt-4 mb-4 mb-sm-0 wow fadeInUp" data-wow-delay="300ms">
-                            <li><a href="javascript:void(0)"><i class="fab fa-facebook-f"></i> </a> </li>
-                            <li><a href="javascript:void(0)"><i class="fab fa-twitter"></i> </a> </li>
-                            <li><a href="javascript:void(0)"><i class="fab fa-linkedin-in"></i> </a> </li>
-                            <li><a href="javascript:void(0)"><i class="fab fa-instagram"></i> </a> </li>
+                            <li><a href="https://www.facebook.com/pages/category/Computer-Company/PTHalcom-Integrated-Solutions-216912491719380/"><i class="fab fa-facebook-f"></i> </a> </li>
+                            <li><a href="https://id.linkedin.com/company/pt-halcom-integrated-solution"><i class="fab fa-linkedin-in"></i> </a> </li>
+                            <li><a href="https://www.instagram.com/halcom.official/?hl=en"><i class="fab fa-instagram"></i> </a> </li>
                         </ul>
                     </div>
                 </div>
