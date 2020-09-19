@@ -15,7 +15,7 @@
                 <div class="col-lg-12 col-md-12 whitecolor">
                     <h3 class="float-left">Project</h3>
                     <ul class="breadcrumb top10 bottom10 float-right">
-                        <li class="breadcrumb-item hover-light"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item hover-light"><a href="<?php echo site_url() ?>">Home</a></li>
                         <li class="breadcrumb-item hover-light">Project</li>
                     </ul>
                 </div>

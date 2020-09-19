@@ -25,4 +25,7 @@
     <link href="<?= base_url()?>node_modules/jquery-toast-plugin/dist/jquery.toast.min.css" rel="stylesheet">
     <!-- Jquery Confirm -->
     <link href="<?= base_url()?>vendor/jquery-confirm/jquery-confirm.min.css" rel="stylesheet">
+    <!-- Datatables -->
+    <link rel="stylesheet" href="<?= base_url()?>vendor/datatables/dataTables.bootstrap4.min.css">
+      
 </head>

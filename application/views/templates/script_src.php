@@ -54,6 +54,9 @@
 <script src="<?= base_url()?>vendor/jquery-confirm/jquery-confirm.min.js"></script>
 <!-- TinyMCE -->
 <script src="<?= base_url()?>node_modules/tinymce/tinymce.min.js"></script>
+<!-- Datatables -->
+<script src="<?= base_url()?>vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="<?= base_url()?>vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
 <script type="text/javascript">
 	class Contact {
@@ -430,4 +433,26 @@
 		external_plugins: { "filemanager" : "<?= base_url()?>node_modules/tinymce/plugins/responsivefilemanager/plugin.min.js"}
 	});
 
+
+	// Datatables Subscriber
+	var tablesubscribelisting = $("#subscriber-listing").DataTable({
+	  oLanguage: {
+	    sProcessing: "loading..."
+	  },
+	  processing: true,
+	  serverSide: true,
+	  ajax: {"url": "<?php echo base_url().'subscriber/get_subscriber_json'?>", "type": "POST"},
+		columns: [
+		    {"data": "RunNo"},
+		    {"data": "Name"},
+		    {"data": "Company"},
+		    {"data": "Email"},
+		],
+	  order: [[1, 'asc']],
+	  "fnRowCallback": function( nRow, aData, iDisplayIndex, iDisplayIndexFull ) {
+	       var index = iDisplayIndex +1;
+	       $('td:eq(0)',nRow).html(index);
+	       return nRow;
+	    }
+	});
 </script>

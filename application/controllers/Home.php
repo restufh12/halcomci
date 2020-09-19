@@ -11,4 +11,9 @@ class Home extends CI_Controller {
 					  'dataevent' => $dataevent);
 		$this->load->view('templates/templates', $data);
 	}
+
+	public function error404(){
+		$data = array('container' => '404');
+		$this->load->view('templates/templates', $data);
+	}
 }

@@ -1,4 +1,3 @@
-<!--Page Header-->
 <section id="main-banner-page" class="position-relative page-header sign-in-header parallax section-nav-smooth">
     <div class="overlay overlay-dark opacity-7 z-index-1"></div>
     <div class="container">
@@ -17,7 +16,7 @@
                 <div class="col-lg-12 col-md-12 whitecolor">
                     <h3 class="float-left">Sign In</h3>
                     <ul class="breadcrumb top10 bottom10 float-right">
-                        <li class="breadcrumb-item hover-light"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item hover-light"><a href="<?php echo site_url() ?>">Home</a></li>
                         <li class="breadcrumb-item hover-light">Sign-in</li>
                     </ul>
                 </div>
@@ -35,7 +34,7 @@
                     <span class="divider-center"></span>
                 </h2>
                 <div class="col-md-8 offset-md-2 heading_space">
-                    <p>Enter your username and password to proceed to the administrator page, <br>or click sign up now to create an account!</p>
+                    <p>Enter your username and password to proceed to the administrator page</p>
                 </div>
             </div>
             <div class="col-lg-6 pr-lg-0 col-md-12 d-none d-lg-flex">
@@ -81,8 +80,8 @@
                             </div>
                             <div class="col-sm-12">
                                 <button type="submit" class="button gradient-btn">Login</button>
-                                <a href="javascript:void(0)" class="ml-2 defaultcolor">Forget password?</a>
-                                <p class="top30 mb-0"> Don't have an account? &nbsp;<a href="javascript:void(0)" class="defaultcolor">Sign Up Now</a> </p>
+                                <a href="<?php echo site_url('auth/forget_password') ?>" class="ml-2 defaultcolor">Forget password?</a>
+                                <!-- <p class="top30 mb-0"> Don't have an account? &nbsp;<a href="javascript:void(0)" class="defaultcolor">Sign Up Now</a> </p> -->
                             </div>
                         </div>
                     </form>
@@ -91,4 +90,4 @@
         </div>
     </div>
 </section>
-<!-- sign-in ends -->
+<!-- sign-in ends 

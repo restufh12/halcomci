@@ -30,6 +30,16 @@ class Contact extends CI_Controller {
 	}
 
 	public function send_subscribe_request(){
+		// Save Subscriber To Database
+		$this->load->model('subscribermodel');
+		$data = [
+			'Name'    => $this->input->post('subUserName'),
+			'Company' => $this->input->post('subCompanyName'),
+			'Email'   => $this->input->post('subUserEmail')
+        ];
+        $this->subscribermodel->insert_subscriber("subscribers", $data);
+
+        // Send Email
 		$config  = $this->load->config('email');
 		$to      = $this->config->item('smtp_user');
 		$from    = $this->input->post('subUserEmail');

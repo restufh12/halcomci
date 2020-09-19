@@ -2,7 +2,7 @@
 <header class="site-header" id="header">
     <nav class="navbar navbar-expand-lg transparent-bg static-nav">
         <div class="container">
-            <a class="" href="index.html">
+            <a class="" href="<?php echo site_url() ?>">
                 <img src="<?php echo base_url() ?>assets/images/logo-transparent.png" width="150px" alt="logo" class="logo-default">
                 <img src="<?php echo base_url() ?>assets/images/logo.png" alt="logo" width="150px" class="logo-scrolled">
             </a>
@@ -43,6 +43,8 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="<?php echo site_url('event/create_event') ?>">Create Event</a>
                             <a class="dropdown-item" href="<?php echo site_url('solution/create_solution') ?>">Create Solution</a>
+                            <a class="dropdown-item" href="<?php echo site_url('subscriber/subscriber_listing') ?>">Subscriber</a>
+                            <a class="dropdown-item" href="<?php echo site_url('admin/update_profile') ?>">Update Profile</a>
                             <a class="dropdown-item" href="<?php echo site_url('auth/logout') ?>">Logout</a>
                         </div>
                     </li>
@@ -128,6 +130,12 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('solution/create_solution') ?>">Create Solution</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo site_url('subscriber/subscriber_listing') ?>">Subscriber</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo site_url('admin/update_profile') ?>">Update Profile</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('auth/logout') ?>">Logout</a>

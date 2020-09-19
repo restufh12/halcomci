@@ -47,7 +47,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="footer_panel padding_bottom_half bottom20">
-                    <a href="index.html" class=" bottom25"><img src="<?php echo base_url() ?>assets/images/logo-transparent.png" width="150px" alt=""></a>
+                    <a href="<?php echo site_url() ?>" class=" bottom25"><img src="<?php echo base_url() ?>assets/images/logo-transparent.png" width="150px" alt=""></a>
                     <p class="whitecolor bottom25">Halcom are IT Infrastructure Specialist, and determined to be the IT company that provides total solutions to its clients and include convenience in implementing the solutions we provide.</p>
                     <ul class="social-icons white wow fadeInUp" data-wow-delay="300ms">
                         <li><a href="https://www.facebook.com/pages/category/Computer-Company/PTHalcom-Integrated-Solutions-216912491719380/" target="_blank"><i class="fab fa-facebook-f"></i> </a> </li>
